@@ -10,11 +10,30 @@ function Button() {
 }
 
 export default function App() {
-  return (
-    <>
-      <h1>Hello world! React time!</h1>
-      <Button />
-      <h2>This website under the license of <span className="creator">{username}</span></h2>
-    </>
-  );
+  let content;
+    if(username === "Artem") {
+      content = <MainMenu />;
+    } else {
+      content = <h1>Welcome, {username}!</h1>;
+    }
+    return(
+      <div>
+        {content}
+      </div>
+    )
+}
+
+function MainMenu(){
+    return (
+      <>
+      <div className="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      </>
+    );
 }
